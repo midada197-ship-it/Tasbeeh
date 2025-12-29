@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapelet électronique | Sadaqa continue</title>
+
+<meta name="description" content="Chapelet électronique pour compter les tasbih, Sadaqa continue, Subhanallah Alhamdulillah Allahu Akbar">
+<meta name="keywords" content="chapelet électronique, tasbih, Sadaqa continue, zikr">
+
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #f9f9f9;
+}
+button {
+  font-size: 20px;
+  padding: 15px;
+  margin: 10px;
+  width: 85%;
+  border-radius: 8px;
+}
+.counter {
+  font-size: 30px;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+
+<h2>🌿 Chapelet électronique</h2>
+<p>Appuyez et récoltez la récompense, Sadaqa continue, avec la permission d’Allah</p>
+
+<div class="counter" id="count">0</div>
+
+<button onclick="add()">Subhanallah</button>
+<button onclick="add()">Alhamdulillah</button>
+<button onclick="add()">Allahu Akbar</button>
+<button onclick="reset()">🔄 Réinitialiser</button>
+
+<script>
+let count = localStorage.getItem("tasbeeh") || 0;
+document.getElementById("count").innerText = count;
+
+function add() {
+  count++;
+  localStorage.setItem("tasbeeh", count);
+  document.getElementById("count").innerText = count;
+}
+
+function reset() {
+  count = 0;
+  localStorage.setItem("tasbeeh", count);
+  document.getElementById("count").innerText = count;
+}
+</script>
+
+</body>
+</html>
